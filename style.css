@@ -743,7 +743,7 @@ footer {
             text-align: center;
             
             img{
-                width: clamp(22.563rem, 20.834rem + 6.284vw, 28.375rem);
+                width: clamp(20rem, 17.796rem + 8.816vw, 28.375rem);
 
             }
 
@@ -1910,7 +1910,7 @@ footer {
             .normal-dish{
                 flex-direction: column;
                 text-align: center;
-
+                margin-bottom: 2.5rem;
                 .dish-title{
                     margin-top: 1rem;
                 }
@@ -1928,6 +1928,7 @@ footer {
             .invested-dish{
                 flex-direction: column-reverse;
                 text-align: center;
+                margin-bottom: 2.5rem;
 
                 .dish-title{
                     margin-top: 1rem;
@@ -2048,6 +2049,8 @@ footer {
     }
 
     /*----- MENU -------*/
+
+    
 
     .gallery .dishes-gallery{
         column-count: 1;
