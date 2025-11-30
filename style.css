@@ -177,18 +177,34 @@ hr{
 .branding {
     width: 100%;
 
+    #progress {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--gold-60);
+
+        /* opacity: .5; */
+
+        z-index: 99999999;
+
+
+        animation: progress-bar auto linear forwards;
+        animation-timeline: scroll();
+    }
+
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
-        background-color: rgba(255, 255, 255, .8);
+        background-color: rgba(255, 255, 255, .85);
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         position: fixed;
         top: 0;
         width: 100%;
 
-        z-index: 99999999;
+        z-index: 999999;
         .izq{
             display: flex;
             gap: 25px;
@@ -196,6 +212,18 @@ hr{
             .canma{
                 font-size: clamp(1.6rem, 1.481rem + 0.432vw, 2rem);
                 font-family: Lora;
+                transition: transform 0.2s;
+
+                a{
+                    cursor: default;
+                    text-decoration: none;
+                    color: var(--black);
+                }
+                
+
+                &:hover{
+                    transform: scale(1.1);
+                }
             }
 
             .social-media {
@@ -246,6 +274,15 @@ hr{
                 }
             }
         }
+    }
+}
+
+@keyframes progress-bar {
+    from {
+        width: 0%;
+    }
+    to{
+        width: 100%;
     }
 }
 
@@ -499,7 +536,7 @@ footer {
     .header-things{
         display: flex;
         align-items: center;
-
+        animation: aparecer 2s forwards;
         .header-logo{
             margin-right: 1.5rem;
             transition: transform 0.3s;
@@ -531,6 +568,8 @@ footer {
     height: 100vh;
     display: flex;
     align-items: center;
+
+    animation: aparecer 2s forwards;
     .izq{
         flex: 1;
         /* border: 1px solid red; */
@@ -541,6 +580,7 @@ footer {
 
         .hero-logo img{
             height: clamp(22rem, 18.135rem + 14.054vw, 35rem);
+
         }
 
         .hero-quote p{
@@ -560,6 +600,15 @@ footer {
             width: auto;
         }
     }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .about{
@@ -775,7 +824,7 @@ footer {
         text-align: center;
 
         img{
-            width: clamp(22.563rem, 20.834rem + 6.284vw, 28.375rem);
+            width: clamp(20rem, 17.796rem + 8.816vw, 28.375rem);
         }
     }
 
@@ -1024,7 +1073,7 @@ footer {
 
     .dishes{
         width: 100%;
-        margin-top: 6rem;
+        margin-top: 4rem;
         .normal-dish{
             display: flex;
             margin-bottom: 5rem ;
@@ -1265,7 +1314,7 @@ footer {
                 h3{
                     margin: 0 0 10px 0;
                     font-family: Lora;
-                    font-size: clamp(1rem, 0.605rem + 1.579vw, 2.5rem);
+                    font-size: clamp(1.4rem, 1.045rem + 1.421vw, 2.75rem);
 
                     font-weight: 400;
                     color: var(--gold-80);
@@ -1276,7 +1325,7 @@ footer {
                     font-weight: 100;
 
                     margin: 0;
-                    font-size: clamp(0.3rem, 0.011rem + 1.158vw, 1.4rem);
+                    font-size: clamp(0.6rem, 0.363rem + 0.947vw, 1.5rem);
                     line-height: 1.4;
 
                     
@@ -1442,7 +1491,6 @@ footer {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Calendar header styling */
         .calendar-header {
             background-color: var(--white);
             display: flex;
@@ -1475,7 +1523,6 @@ footer {
             }
         }
 
-        /* Days of the week styling */
         .calendar-days {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -1500,9 +1547,6 @@ footer {
             }
         }
 
-        
-
-        /* Date cells styling */
         .calendar-dates {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -1548,7 +1592,6 @@ footer {
             cursor: auto;
         }
 
-        /* Highlight today */
         .today {
             background-color: var(--gold-100);
             font-weight: bold;
@@ -1723,6 +1766,15 @@ footer {
                 .text{
                     margin: 0 8%;
 
+                    .text-para{
+
+                        p{
+                            margin: 0;
+                            margin-bottom: 20px;
+
+                        }
+                    }
+
                 }
 
                 .image img{
@@ -1739,7 +1791,14 @@ footer {
 
                 .text{
                     margin: 0 8%;
+                    .text-para{
+                        
+                        p{
+                            margin: 0;
+                            margin-bottom: 20px;
 
+                        }
+                    }
                 }
 
                 .image img{
@@ -1756,6 +1815,7 @@ footer {
     }
 
     .cellar{
+
         .cellar-content{
             flex-direction: column-reverse;
             .text{
@@ -1769,6 +1829,17 @@ footer {
             .painting{
                 flex: 0;
                 display: none;
+            }
+        }
+    }
+
+    .events{
+
+        .events-description{
+            p{
+                margin: 0 10%;
+                margin-bottom: 20px;
+
             }
         }
     }
@@ -1946,6 +2017,7 @@ footer {
 
 
         .book-calendar{
+            margin-top: 2rem;
             width: 80%;
         }
     }
@@ -1975,12 +2047,22 @@ footer {
         }
     }
 
-    /*----- CONTACT -----*/
+    /*----- MENU -------*/
 
-    
+    .gallery .dishes-gallery{
+        column-count: 1;
+
+        .dish-item:nth-child(3) {
+            margin-bottom: clamp(0.375rem, 0.211rem + 0.658vw, 1rem);
+        }
+    }
+
+    /*----- CONTACT -----*/
 
     .contact-contact{
         
+        padding-top: 2rem;
+
         .contact-img{
             display: none;
         }
@@ -2126,7 +2208,7 @@ footer {
             text-align: center;
 
             img {
-                max-width: 50vw;
+                max-width: 40vw;
                 transition: transform 0.2s;
 
                 &:hover {
@@ -2267,11 +2349,6 @@ footer {
         }
     }
 
-    .culinary .personal .person .der .content,
-    .culinary h2{
-        text-align: end;
-    }
-
     /*------- MENU --------*/
     .tasting-menus{
         .menus {
@@ -2311,6 +2388,14 @@ footer {
             flex-direction: column;
 
         }
+    }
+
+    .contact-contact .contact-content .contact-description{
+        margin: 0 4%;
+    }
+
+    .contact-contact .contact-content .contact-form{
+        margin: 1.6rem 4%;
     }
 
 }
