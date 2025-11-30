@@ -318,14 +318,20 @@ footer {
 
                 transition: box-shadow .3s;
 
-                /* margin-left: 20%; */
 
             }
 
             input::placeholder{
-                font-family: Montserrat;
+                font-family: "FoundersGrotesk";
+                color: var(--black-50);
             }
 
+            input[type=text]:focus{
+                border: none;
+                outline: none;
+
+            }
+            
             input:hover{
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             }
